@@ -24,6 +24,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".contentlayer/generated"
-  ],
+, "data/snippets/equillibrium-reproduction-number.mdx"  ],
   "exclude": ["node_modules"]
 }
