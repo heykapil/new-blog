@@ -1,0 +1,98 @@
+---
+title: 'CF Derivatives'
+description: 'Matlab code for numerical simulation of CF Derivatives'
+logo: 'matlab.png'
+---
+
+```matlab
+clc;
+clear all;
+close all;
+% step size and intervals
+stepsize=0.01; t(1)=0; tfinal=10; t=t(1):stepsize:tfinal; N=ceil((tfinal-t(1))/stepsize);
+% initial conditions
+s(1)=0.60;e(1)=0.18;i(1)=0.07;h(1)=0.13;d(1)=0.05;r(1)=0.10;
+% prompts for entering values
+alphavalue = 'Give constant value of fractional order alpha = ';
+% alpha1value = 'Give constant value of  alpha1 = ';
+% alpha2value = 'Give constant value of  alpha2 = ';
+% alpha3value = 'Give constant value of  alpha3 = ';
+% alpha4value = 'Give constant value of  alpha4 = ';
+% alpha5value = 'Give constant value of  alpha5 = ';
+% alpha6value = 'Give constant value of  alpha6 = ';
+% Bvalue = 'Give constant value of Birth rate B = ';
+% muvalue = 'Give constant value of death rate mu = ';
+% constant fractional order
+alpha =  input(alphavalue);
+% parameters of model
+B = 10; %input(Bvalue);
+mu = 0.1; %input(muvalue);
+alpha1 = 0.50; %input(alpha1value);
+alpha2 = 0.20; %input(alpha2value);
+alpha3 = 0.1; %input(alpha3value);
+alpha4 = 0.05; %input(alpha4value);
+alpha5 = 0.01; %input(alpha5value);
+alpha6 = 0.8; %input(alpha6value);
+```
+
+
+```matlab:constant-order.m
+% System of differential equations
+k1=@(t,s,e,i,h,d,r) alpha1.*(e+i+d+h).*s./(s+e+i+d+h+r)-(mu+alpha2).*e;
+k2=@(t,s,e,i,h,d,r) alpha2.*e-(alpha3+alpha4+mu).*i;
+k3=@(t,s,e,i,h,d,r) alpha3.*i-(alpha5+alpha6+mu).*h;
+k4=@(t,s,e,i,h,d,r) alpha4.*i+alpha5.*h-mu.*d;
+k5=@(t,s,e,i,h,d,r) alpha6.*h-mu.*r;
+k6=@(t,s,e,i,h,d,r) B-mu.*s-alpha1.*(e+i+d+h).*s./(s+e+i+d+h+r);
+
+e(2)=e(1)+((stepsize^alpha)/(gamma(1+alpha))).*k1(t(1),s(1),e(1),i(1),h(1),d(1),r(1));
+i(2)=i(1)+((stepsize^alpha)/(gamma(1+alpha))).*k2(t(1),s(1),e(1),i(1),h(1),d(1),r(1));
+h(2)=h(1)+((stepsize^alpha)/(gamma(1+alpha))).*k3(t(1),s(1),e(1),i(1),h(1),d(1),r(1));
+d(2)=d(1)+((stepsize^alpha)/(gamma(1+alpha))).*k4(t(1),s(1),e(1),i(1),h(1),d(1),r(1));
+r(2)=r(1)+((stepsize^alpha)/(gamma(1+alpha))).*k5(t(1),s(1),e(1),i(1),h(1),d(1),r(1));
+s(2)=s(1)+((stepsize^alpha)/(gamma(1+alpha))).*k6(t(1),s(1),e(1),i(1),h(1),d(1),r(1));
+
+%  Difference equation algrothim
+ for n=2:N
+    e(n+1)=e(n)+(0.5*(2-alpha)*(1-alpha)+0.25*3*stepsize*alpha*(2-alpha))*k1(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha)*(1-alpha)+0.25*stepsize*alpha*(2-alpha))*k1(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+    i(n+1)=i(n)+(0.5*(2-alpha)*(1-alpha)+0.25*3*stepsize*alpha*(2-alpha))*k2(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha)*(1-alpha)+0.25*stepsize*alpha*(2-alpha))*k2(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+    h(n+1)=h(n)+(0.5*(2-alpha)*(1-alpha)+0.25*3*stepsize*alpha*(2-alpha))*k3(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha)*(1-alpha)+0.25*stepsize*alpha*(2-alpha))*k3(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+    d(n+1)=d(n)+(0.5*(2-alpha)*(1-alpha)+0.25*3*stepsize*alpha*(2-alpha))*k4(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha)*(1-alpha)+0.25*stepsize*alpha*(2-alpha))*k4(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+    r(n+1)=r(n)+(0.5*(2-alpha)*(1-alpha)+0.25*3*stepsize*alpha*(2-alpha))*k5(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha)*(1-alpha)+0.25*stepsize*alpha*(2-alpha))*k5(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+    s(n+1)=s(n)+(0.5*(2-alpha)*(1-alpha)+0.25*3*stepsize*alpha*(2-alpha))*k6(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha)*(1-alpha)+0.25*stepsize*alpha*(2-alpha))*k6(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+    t(n+1)=t(n)+stepsize;
+ end
+% figure(1);
+% plot3(s,e,h,'-. b' ,'LineWidth',2);
+% xlabel('susceptible'),ylabel('exposed'),zlabel('hospitalized')
+% figure(5);
+% plot3(s,i,h,': b','LineWidth',2);
+% xlabel('s'),ylabel('i'),zlabel('h');
+% figure(3);
+% figure(5)
+% plot(t,h, 'b -','LineWidth',2);
+% hold on;
+figure(5)
+plot(t,e, 'y -.',t,i, 'r -', t,h, 'c', t,d, '-. k',t,r,'-. g','LineWidth',2); 
+```
+
+```matlab:fractional-order-as-function.m
+ alpha=@(t) 1./(1+exp(-t)); %input the function that represent the fractional-order
+  
+  for n=2:N
+     e(n+1)=e(n)+(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*3*stepsize*alpha(t(n))*(2-alpha(t(n))))*k1(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*stepsize*alpha(t(n))*(2-alpha(t(n))))*k1(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+     i(n+1)=i(n)+(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*3*stepsize*alpha(t(n))*(2-alpha(t(n))))*k2(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*stepsize*alpha(t(n))*(2-alpha(t(n))))*k2(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+     h(n+1)=h(n)+(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*3*stepsize*alpha(t(n))*(2-alpha(t(n))))*k3(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*stepsize*alpha(t(n))*(2-alpha(t(n))))*k3(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+     d(n+1)=d(n)+(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*3*stepsize*alpha(t(n))*(2-alpha(t(n))))*k4(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*stepsize*alpha(t(n))*(2-alpha(t(n))))*k4(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+     r(n+1)=r(n)+(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*3*stepsize*alpha(t(n))*(2-alpha(t(n))))*k5(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*stepsize*alpha(t(n))*(2-alpha(t(n))))*k5(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+     s(n+1)=s(n)+(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*3*stepsize*alpha(t(n))*(2-alpha(t(n))))*k6(t(n),s(n),e(n),i(n),h(n),d(n),r(n))-(0.5*(2-alpha(t(n)))*(1-alpha(t(n)))+0.25*stepsize*alpha(t(n))*(2-alpha(t(n))))*k6(t(n-1),s(n-1),e(n-1),i(n-1),h(n-1),d(n-1),r(n-1));
+     t(n+1)=t(n)+stepsize;
+  end
+ % figure(1);
+ % plot(t,s, '-',t,e, t,i,t,h, '-r', t,d, 'b',t,r);
+ % figure(2);
+ % plot3(s,i,r);
+ % xlabel('s'),ylabel('i'),zlabel('r')
+ % figure(3);
+ % plot(t,s,t,i,t,r);
+```

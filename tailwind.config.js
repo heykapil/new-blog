@@ -1,4 +1,5 @@
 const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./pages/**/*.tsx', './components/**/*.tsx', './layouts/**/*.tsx'],
@@ -7,6 +8,14 @@ module.exports = {
     extend: {
       colors: {
         'blue-opaque': 'rgb(13 42 148 / 18%)',
+        primary: colors.fuchsia,
+        'spotify-green': '#1DB954',
+        fuchsia: colors.fuchsia,
+        green: colors.emerald,
+        blue: colors.blue,
+        yellow: colors.amber,
+        purple: colors.violet,
+        dark: '#131415',
         gray: {
           0: '#fff',
           100: '#fafafa',
