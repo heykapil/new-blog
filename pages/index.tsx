@@ -6,23 +6,24 @@ import BlogPostCard from '../components/BlogPostCard';
 import Subscribe from '../components/Subscribe';
 import VideoCard from '../components/VideoCard';
 
-export default function Home({ videos }) {
+import TypedBios from 'components/TypedBios';
+
+
+export default function Home({ featuredPosts,
+  videos }) {
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
         <div className="flex flex-col-reverse sm:flex-row items-start">
-          <div className="flex flex-col pr-8">
+          <div className="flex flex-col pr-8 mb-16">
             <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
-              Lee Robinson
+              Kapil Chaudhary
             </h1>
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-              Director of Developer Relations at{' '}
-              <span className="font-semibold">Vercel</span>
+            A research scholar in fractional-order mathematical modelling working as{' '}
+            <span className='font-semibold'>Junior Research Fellow, CSIR India.</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-16">
-              Helping developers build a faster web. Teaching about web
-              development, serverless, and React / Next.js.
-            </p>
+            <TypedBios />
           </div>
           <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
             <Image
@@ -38,7 +39,15 @@ export default function Home({ videos }) {
           Featured Posts
         </h3>
         <div className="flex gap-6 flex-col md:flex-row">
-          <BlogPostCard
+        {/* {featuredPosts.map((post) => (
+              <BlogPostCard
+                title={post.title}
+                slug={post.slug}
+                gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+                key={post._id}
+              />
+        ))} */}
+           <BlogPostCard 
             title="Everything I Know About Style Guides, Design Systems, and Component Libraries"
             slug="style-guides-component-libraries-design-systems"
             gradient="from-[#D8B4FE] to-[#818CF8]"
@@ -52,7 +61,7 @@ export default function Home({ videos }) {
             title="Past, Present, and Future of React State Management"
             slug="react-state-management"
             gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-          />
+          /> 
         </div>
         <Link href="/blog">
           <a className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
