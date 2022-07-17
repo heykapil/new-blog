@@ -18,7 +18,7 @@ export default function Home() {
                 Kapil Chaudhary
               </h1>
               <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-                A research scholar in Mathematical modelling woeking as{' '}
+                A research scholar in fractional-order mathematical modelling working as{' '}
                 <span className="font-semibold">Junior research fellow (CSIR) India.</span>
               </h2>
               <TypedBios />

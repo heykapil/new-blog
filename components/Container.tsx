@@ -4,24 +4,28 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
 import cn from 'classnames';
-
+import useSound from 'use-sound';  
 import Footer from 'components/Footer';
 import MobileMenu from 'components/MobileMenu';
 
 function NavItem({ href, text }) {
   const router = useRouter();
   const isActive = router.asPath === href;
-
+  const [playpageChange] = useSound("/media/page-change.mp3");
+  // const [playMenuon] = useSound("/media/switch-on.mp3");
+  
   return (
     <NextLink href={href}>
-      <a
+      <a 
         className={cn(
           isActive
             ? 'font-semibold text-gray-800 dark:text-gray-200'
             : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:no-underline hover:bg-gray-200 dark:hover:bg-gray-800 transition-all hover:border hover:border-primary-500'
-          
+          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:no-underline hover:bg-gray-200 dark:hover:bg-gray-800 transition-all hover:border hover:border-primary-500'          
         )}
+        onClick={() => {
+          playpageChange()
+        }}
       >
         <span className="capsize">{text}</span>
       </a>
@@ -32,6 +36,7 @@ function NavItem({ href, text }) {
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const [playpageSwitch] = useSound("/media/page-switch.mp3");
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
@@ -85,10 +90,13 @@ export default function Container(props) {
             aria-label="Toggle Dark Mode"
             type="button"
             className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
-            onClick={() =>
+            onClick={() =>{
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+              playpageSwitch()
             }
+          }
           >
+
           {mounted && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

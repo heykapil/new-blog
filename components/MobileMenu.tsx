@@ -3,6 +3,7 @@ import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-menu.module.css';
+import useSound from "use-sound";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,9 @@ export default function MobileMenu() {
       exitDelay: 300
     }
   );
-
+  const [playpageChange] = useSound("/media/page-change.mp3");
+  const [playMenuon] = useSound("/media/switch-on.mp3");
+  // const [playpageSwitch] = useSound("/media/page-switch.mp3");
   function toggleMenu() {
     if (isMenuOpen) {
       setIsMenuOpen(false);
@@ -36,7 +39,10 @@ export default function MobileMenu() {
         className={cn(styles.burger, 'visible md:hidden')}
         aria-label="Toggle menu"
         type="button"
-        onClick={toggleMenu}
+        onClick={() => {
+          toggleMenu()
+          playMenuon()
+        }}
       >
         <MenuIcon data-hide={isMenuOpen} />
         <CrossIcon data-hide={!isMenuOpen} />
@@ -52,9 +58,12 @@ export default function MobileMenu() {
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '150ms' }}
+
           >
             <Link href="/">
-              <a className="flex w-auto pb-4">Home</a>
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Home</a>
             </Link>
           </li>
           <li
@@ -62,7 +71,9 @@ export default function MobileMenu() {
             style={{ transitionDelay: '175ms' }}
           >
             <Link href="/guestbook">
-              <a className="flex w-auto pb-4">Guestbook</a>
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Guestbook</a>
             </Link>
           </li>
           <li
@@ -70,7 +81,9 @@ export default function MobileMenu() {
             style={{ transitionDelay: '200ms' }}
           >
             <Link href="/dashboard">
-              <a className="flex w-auto pb-4">Dashboard</a>
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Dashboard</a>
             </Link>
           </li>
           <li
@@ -86,7 +99,9 @@ export default function MobileMenu() {
             style={{ transitionDelay: '275ms' }}
           >
             <Link href="/snippets">
-              <a className="flex w-auto pb-4">Snippets</a>
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Snippets</a>
             </Link>
           </li>
           <li
@@ -94,15 +109,19 @@ export default function MobileMenu() {
             style={{ transitionDelay: '300ms' }}
           >
             <Link href="/newsletter">
-              <a className="flex w-auto pb-4">Newsletter</a>
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Newsletter</a>
             </Link>
           </li>
           <li
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{ transitionDelay: '325ms' }}
           >
-            <Link href="/tweets">
-              <a className="flex w-auto pb-4">Tweets</a>
+            <Link  href="/tweets">
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Tweets</a>
             </Link>
           </li>
           <li
@@ -110,7 +129,9 @@ export default function MobileMenu() {
             style={{ transitionDelay: '350ms' }}
           >
             <Link href="/uses">
-              <a className="flex w-auto pb-4">Uses</a>
+              <a onClick={() => {
+          playpageChange()
+        }} className="flex w-auto pb-4">Uses</a>
             </Link>
           </li>
         </ul>
