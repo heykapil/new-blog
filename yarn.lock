@@ -1733,24 +1733,34 @@
   "resolved" "https://registry.npmjs.org/functions-have-names/-/functions-have-names-1.2.3.tgz"
   "version" "1.2.3"
 
-"gaxios@^2.0.1", "gaxios@^2.1.0":
-  "integrity" "sha512-US8UMj8C5pRnao3Zykc4AAVr+cffoNKRTg9Rsf2GiuZCW69vgJj38VK2PzlPuQU73FZ/nTk9/Av6/JGcE1N9vA=="
-  "resolved" "https://registry.npmjs.org/gaxios/-/gaxios-2.3.4.tgz"
-  "version" "2.3.4"
+"gaxios@^4.0.0":
+  "integrity" "sha512-gSaYYIO1Y3wUtdfHmjDUZ8LWaxJQpiavzbF5Kq53akSzvmVg0RfyOcFDbO1KJ/KCGRFz2qG+lS81F0nkr7cRJA=="
+  "resolved" "https://registry.npmjs.org/gaxios/-/gaxios-4.3.3.tgz"
+  "version" "4.3.3"
   dependencies:
     "abort-controller" "^3.0.0"
     "extend" "^3.0.2"
     "https-proxy-agent" "^5.0.0"
     "is-stream" "^2.0.0"
-    "node-fetch" "^2.3.0"
+    "node-fetch" "^2.6.7"
 
-"gcp-metadata@^3.4.0":
-  "integrity" "sha512-ZQf+DLZ5aKcRpLzYUyBS3yo3N0JSa82lNDO8rj3nMSlovLcz2riKFBsYgDzeXcv75oo5eqB2lx+B14UvPoCRnA=="
-  "resolved" "https://registry.npmjs.org/gcp-metadata/-/gcp-metadata-3.5.0.tgz"
-  "version" "3.5.0"
+"gaxios@^5.0.0":
+  "integrity" "sha512-keK47BGKHyyOVQxgcUaSaFvr3ehZYAlvhvpHXy0YB2itzZef+GqZR8TBsfVRWghdwlKrYsn+8L8i3eblF7Oviw=="
+  "resolved" "https://registry.npmjs.org/gaxios/-/gaxios-5.0.1.tgz"
+  "version" "5.0.1"
   dependencies:
-    "gaxios" "^2.1.0"
-    "json-bigint" "^0.3.0"
+    "extend" "^3.0.2"
+    "https-proxy-agent" "^5.0.0"
+    "is-stream" "^2.0.0"
+    "node-fetch" "^2.6.7"
+
+"gcp-metadata@^5.0.0":
+  "integrity" "sha512-gfwuX3yA3nNsHSWUL4KG90UulNiq922Ukj3wLTrcnX33BB7PwB1o0ubR8KVvXu9nJH+P5w1j2SQSNNqto+H0DA=="
+  "resolved" "https://registry.npmjs.org/gcp-metadata/-/gcp-metadata-5.0.0.tgz"
+  "version" "5.0.0"
+  dependencies:
+    "gaxios" "^5.0.0"
+    "json-bigint" "^1.0.0"
 
 "get-caller-file@^2.0.5":
   "integrity" "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg=="
@@ -1854,47 +1864,47 @@
     "merge2" "^1.4.1"
     "slash" "^4.0.0"
 
-"google-auth-library@^5.6.1":
-  "integrity" "sha512-rOlaok5vlpV9rSiUu5EpR0vVpc+PhN62oF4RyX/6++DG1VsaulAFEMlDYBLjJDDPI6OcNOCGAKy9UVB/3NIDXg=="
-  "resolved" "https://registry.npmjs.org/google-auth-library/-/google-auth-library-5.10.1.tgz"
-  "version" "5.10.1"
+"google-auth-library@^8.0.2":
+  "integrity" "sha512-eG3pCfrLgVJe19KhAeZwW0m1LplNEo0FX1GboWf3hu18zD2jq8TUH2K8900AB2YRAuJ7A+1aSXDp1BODjwwRzg=="
+  "resolved" "https://registry.npmjs.org/google-auth-library/-/google-auth-library-8.1.1.tgz"
+  "version" "8.1.1"
   dependencies:
     "arrify" "^2.0.0"
     "base64-js" "^1.3.0"
     "ecdsa-sig-formatter" "^1.0.11"
     "fast-text-encoding" "^1.0.0"
-    "gaxios" "^2.1.0"
-    "gcp-metadata" "^3.4.0"
-    "gtoken" "^4.1.0"
+    "gaxios" "^5.0.0"
+    "gcp-metadata" "^5.0.0"
+    "gtoken" "^6.0.0"
     "jws" "^4.0.0"
-    "lru-cache" "^5.0.0"
+    "lru-cache" "^6.0.0"
 
-"google-p12-pem@^2.0.0":
-  "integrity" "sha512-7RLkxwSsMsYh9wQ5Vb2zRtkAHvqPvfoMGag+nugl1noYO7gf0844Yr9TIFA5NEBMAeVt2Z+Imu7CQMp3oNatzQ=="
-  "resolved" "https://registry.npmjs.org/google-p12-pem/-/google-p12-pem-2.0.5.tgz"
-  "version" "2.0.5"
+"google-p12-pem@^4.0.0":
+  "integrity" "sha512-lRTMn5ElBdDixv4a86bixejPSRk1boRtUowNepeKEVvYiFlkLuAJUVpEz6PfObDHYEKnZWq/9a2zC98xu62A9w=="
+  "resolved" "https://registry.npmjs.org/google-p12-pem/-/google-p12-pem-4.0.0.tgz"
+  "version" "4.0.0"
   dependencies:
-    "node-forge" "^0.10.0"
+    "node-forge" "^1.3.1"
 
-"googleapis-common@^3.2.0":
-  "integrity" "sha512-sTEXlauVce4eMX0S6hVoiWgxVzQZ7dc16KcGF7eh+A+uIyDgXqnuwOMZw+svX4gOJv6w4ACecm23Qh9UDaldsw=="
-  "resolved" "https://registry.npmjs.org/googleapis-common/-/googleapis-common-3.2.2.tgz"
-  "version" "3.2.2"
+"googleapis-common@^6.0.0":
+  "integrity" "sha512-ieZouiuoyTHCckOgu7NU+n5UvA8kAzGTRRMQD+3bobCX9npnRvYDmTHZjM5lQLzf0cGz1xQ1ABCxGQ+xSsMkCw=="
+  "resolved" "https://registry.npmjs.org/googleapis-common/-/googleapis-common-6.0.0.tgz"
+  "version" "6.0.0"
   dependencies:
     "extend" "^3.0.2"
-    "gaxios" "^2.0.1"
-    "google-auth-library" "^5.6.1"
+    "gaxios" "^4.0.0"
+    "google-auth-library" "^8.0.2"
     "qs" "^6.7.0"
     "url-template" "^2.0.8"
-    "uuid" "^7.0.0"
+    "uuid" "^8.0.0"
 
-"googleapis@48.0.0":
-  "integrity" "sha512-ysp0/GN1BdOC8no1M6Pn/jS445xLL/FiTRa+aYJXD/HhtWFb+NOlNSfHIVnLjlQZsCn6L4qj1EpOaM/979nnEw=="
-  "resolved" "https://registry.npmjs.org/googleapis/-/googleapis-48.0.0.tgz"
-  "version" "48.0.0"
+"googleapis@^105.0.0":
+  "integrity" "sha512-wH/jU/6QpqwsjTKj4vfKZz97ne7xT7BBbKwzQEwnbsG8iH9Seyw19P+AuLJcxNNrmgblwLqfr3LORg4Okat1BQ=="
+  "resolved" "https://registry.npmjs.org/googleapis/-/googleapis-105.0.0.tgz"
+  "version" "105.0.0"
   dependencies:
-    "google-auth-library" "^5.6.1"
-    "googleapis-common" "^3.2.0"
+    "google-auth-library" "^8.0.2"
+    "googleapis-common" "^6.0.0"
 
 "gray-matter@^4.0.3":
   "integrity" "sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q=="
@@ -1906,15 +1916,14 @@
     "section-matter" "^1.0.0"
     "strip-bom-string" "^1.0.0"
 
-"gtoken@^4.1.0":
-  "integrity" "sha512-VxirzD0SWoFUo5p8RDP8Jt2AGyOmyYcT/pOUgDKJCK+iSw0TMqwrVfY37RXTNmoKwrzmDHSk0GMT9FsgVmnVSA=="
-  "resolved" "https://registry.npmjs.org/gtoken/-/gtoken-4.1.4.tgz"
-  "version" "4.1.4"
+"gtoken@^6.0.0":
+  "integrity" "sha512-WPZcFw34wh2LUvbCUWI70GDhOlO7qHpSvFHFqq7d3Wvsf8dIJedE0lnUdOmsKuC0NgflKmF0LxIF38vsGeHHiQ=="
+  "resolved" "https://registry.npmjs.org/gtoken/-/gtoken-6.1.0.tgz"
+  "version" "6.1.0"
   dependencies:
-    "gaxios" "^2.1.0"
-    "google-p12-pem" "^2.0.0"
+    "gaxios" "^4.0.0"
+    "google-p12-pem" "^4.0.0"
     "jws" "^4.0.0"
-    "mime" "^2.2.0"
 
 "has-bigints@^1.0.1", "has-bigints@^1.0.2":
   "integrity" "sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ=="
@@ -2331,10 +2340,10 @@
   dependencies:
     "argparse" "^2.0.1"
 
-"json-bigint@^0.3.0":
-  "integrity" "sha512-DGWnSzmusIreWlEupsUelHrhwmPPE+FiQvg+drKfk2p+bdEYa5mp4PJ8JsCWqae0M2jQNb0HPvnwvf1qOTThzQ=="
-  "resolved" "https://registry.npmjs.org/json-bigint/-/json-bigint-0.3.1.tgz"
-  "version" "0.3.1"
+"json-bigint@^1.0.0":
+  "integrity" "sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ=="
+  "resolved" "https://registry.npmjs.org/json-bigint/-/json-bigint-1.0.0.tgz"
+  "version" "1.0.0"
   dependencies:
     "bignumber.js" "^9.0.0"
 
@@ -2466,13 +2475,6 @@
   "version" "2.0.2"
   dependencies:
     "tslib" "^2.0.3"
-
-"lru-cache@^5.0.0":
-  "integrity" "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w=="
-  "resolved" "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz"
-  "version" "5.1.1"
-  dependencies:
-    "yallist" "^3.0.2"
 
 "lru-cache@^6.0.0":
   "integrity" "sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA=="
@@ -3091,11 +3093,6 @@
   dependencies:
     "mime-db" "~1.25.0"
 
-"mime@^2.2.0":
-  "integrity" "sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg=="
-  "resolved" "https://registry.npmjs.org/mime/-/mime-2.6.0.tgz"
-  "version" "2.6.0"
-
 "minimatch@^3.0.4", "minimatch@^3.1.1", "minimatch@^3.1.2":
   "integrity" "sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw=="
   "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz"
@@ -3146,9 +3143,9 @@
   "version" "1.4.0"
 
 "next-auth@^4.1.0":
-  "integrity" "sha512-PGq5jQyhEF3vB8zl4LOXzG1KxTKT5DQnfKbSBgPslg+kIhIFdDCH9cLT64tJfsKKyCchLGuFsVlGu+kDEGbqOQ=="
-  "resolved" "https://registry.npmjs.org/next-auth/-/next-auth-4.1.0.tgz"
-  "version" "4.1.0"
+  "integrity" "sha512-4CKZbv9VeCaqfDAXyqFThZy05ApbLd0bhXEB+DCq9aD43h6Rkvz0QgM7QOCJXESy0QKJUXHzopkBq+iaGxdc0g=="
+  "resolved" "https://registry.npmjs.org/next-auth/-/next-auth-4.10.0.tgz"
+  "version" "4.10.0"
   dependencies:
     "@babel/runtime" "^7.16.3"
     "@panva/hkdf" "^1.0.1"
@@ -3213,7 +3210,7 @@
   "resolved" "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz"
   "version" "1.0.0"
 
-"node-fetch@^2.3.0":
+"node-fetch@^2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
@@ -3229,10 +3226,10 @@
     "fetch-blob" "^3.1.4"
     "formdata-polyfill" "^4.0.10"
 
-"node-forge@^0.10.0":
-  "integrity" "sha512-PPmu8eEeG9saEUvI97fm4OYxXVB6bFvyNTyiUOBichBpFG8A1Ljw3bY62+5oOjDEMHRnd0Y7HQ+x7uzxOzC6JA=="
-  "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-0.10.0.tgz"
-  "version" "0.10.0"
+"node-forge@^1.3.1":
+  "integrity" "sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA=="
+  "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-1.3.1.tgz"
+  "version" "1.3.1"
 
 "node-releases@^2.0.6":
   "integrity" "sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg=="
@@ -4389,12 +4386,7 @@
   "resolved" "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   "version" "1.0.2"
 
-"uuid@^7.0.0":
-  "integrity" "sha512-DPSke0pXhTZgoF/d+WSt2QaKMCFSfx7QegxEWT+JOuHF5aWrKEn0G+ztjuJg/gG8/ItK+rbPCD/yNv8yyih6Cg=="
-  "resolved" "https://registry.npmjs.org/uuid/-/uuid-7.0.3.tgz"
-  "version" "7.0.3"
-
-"uuid@^8.3.2":
+"uuid@^8.0.0", "uuid@^8.3.2":
   "integrity" "sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   "version" "8.3.2"
@@ -4514,11 +4506,6 @@
   "integrity" "sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA=="
   "resolved" "https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz"
   "version" "5.0.8"
-
-"yallist@^3.0.2":
-  "integrity" "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="
-  "resolved" "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz"
-  "version" "3.1.1"
 
 "yallist@^4.0.0":
   "integrity" "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A=="
