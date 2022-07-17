@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Container from 'components/Container';
 import type { PropsWithChildren } from 'react';
 import type { Snippet } from 'contentlayer/generated';
-import cn from 'classnames';
 
 export default function SnippetLayout({
   children,
