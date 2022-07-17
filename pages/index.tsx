@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import Container from '../components/Container';
 import BlogPostCard from '../components/BlogPostCard';
-import Subscribe from '../components/Subscribe';
+// import Subscribe from '../components/Subscribe';
 import VideoCard from '../components/VideoCard';
 import TypedBios from 'components/TypedBios';
 
@@ -42,7 +42,7 @@ export default function Home() {
             Featured Posts
           </h3>
           <div className="flex gap-6 flex-col md:flex-row">
-            <BlogPostCard
+            {/* <BlogPostCard
               title="Everything I Know About Style Guides, Design Systems, and Component Libraries"
               slug="style-guides-component-libraries-design-systems"
               gradient="from-[#D8B4FE] to-[#818CF8]"
@@ -56,7 +56,7 @@ export default function Home() {
               title="Past, Present, and Future of React State Management"
               slug="react-state-management"
               gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-            />
+            /> */}
           </div>
           <Link href="/blog">
             <a className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
@@ -133,7 +133,7 @@ export default function Home() {
             </svg>
           </a>
           <span className="h-16" />
-          <Subscribe />
+          {/* <Subscribe /> */}
         </div>
       </Container>
   );

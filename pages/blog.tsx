@@ -56,7 +56,7 @@ export default function Blog({
             <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
               Most Popular
             </h3>
-            <BlogPost
+            {/* <BlogPost
               title="Rust Is The Future of JavaScript Infrastructure"
               summary="Why is Rust being used to replace parts of the JavaScript web ecosystem like minification (Terser), transpilation (Babel), formatting (Prettier), bundling (webpack), linting (ESLint), and more?"
               slug="rust"
@@ -70,7 +70,7 @@ export default function Blog({
               title="Building a Design System Monorepo with Turborepo"
               summary="Manage multiple packages with a shared build, test, and release process using Turborepo, Changesets, Storybook, and more."
               slug="turborepo-design-system-monorepo"
-            />
+            /> */}
           </>
         )}
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
