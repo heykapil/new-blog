@@ -19,9 +19,9 @@ function NavItem({ href, text }) {
       <a 
         className={cn(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
-            : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:no-underline hover:bg-gray-200 dark:hover:bg-gray-800 transition-all hover:border hover:border-primary-500'          
+            ? 'font-semibold text-gray-800 dark:text-gray-800 bg-gradient-to-br from-header-active-from via-header-active-via to-header-active-to'
+            : 'font-semibold text-gray-800 dark:text-gray-400',
+          'hidden font-semibold md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg  text-gray-800 dark:text-gray-200 hover:dark:text-gray-800 hover:bg-gradient-to-tr hover:header-hover-from hover:header-hover-via hover:header-hover-to '          
         )}
         onClick={() => {
           playpageChange()
