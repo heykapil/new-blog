@@ -1,5 +1,4 @@
-import { useState } from 'react';
-
+import { useState, Suspense } from 'react';
 import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
 import { InferGetStaticPropsType } from 'next';
@@ -73,6 +72,7 @@ export default function Blog({
             /> */}
           </>
         )}
+        <Suspense fallback={null}>
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           All Posts
         </h3>
@@ -84,6 +84,7 @@ export default function Blog({
         {filteredBlogPosts.map((post) => (
           <BlogPost key={post.title} {...post} />
         ))}
+        </Suspense>
       </div>
     </Container>
   );
