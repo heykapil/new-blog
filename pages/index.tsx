@@ -28,13 +28,13 @@ export default function Home() {
               </div>
               <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
                 <Image
-                  alt="Lee Robinson"
+                  alt="Kapil Chaudhary"
                   height={176}
                   width={176}
                   src="/avatar.jpg"
                   sizes="30vw"
                   priority
-                  className="rounded-full filter grayscale"
+                  className="filter grayscale-0 hover:grayscale-50 rounded-full sm:rounded-xl"
                 />
               </div>
             </div>

@@ -36,6 +36,9 @@ module.exports = {
           950: '#131415'
         }
       },
+      grayscale: {
+        50: '50%',
+      },
       fontFamily: {
         sans: ['IBM Plex Sans', ...fontFamily.sans]
       },
