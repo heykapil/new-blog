@@ -11,7 +11,7 @@ import MobileMenu from 'components/MobileMenu';
 function NavItem({ href, text }) {
   const router = useRouter();
   const isActive = router.asPath === href;
-  const [playpageChange] = useSound("/media/page-change.mp3");
+  // const [playpageChange] = useSound("/media/page-change.mp3");
   // const [playMenuon] = useSound("/media/switch-on.mp3");
   
   return (
@@ -24,7 +24,7 @@ function NavItem({ href, text }) {
           'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:no-underline hover:bg-gray-200 dark:hover:bg-gray-800 transition-all hover:border hover:border-primary-500'          
         )}
         onClick={() => {
-          playpageChange()
+          // playpageChange()
         }}
       >
         <span className="capsize">{text}</span>
@@ -36,7 +36,7 @@ function NavItem({ href, text }) {
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
-  const [playpageSwitch] = useSound("/media/page-switch.mp3");
+  // const [playpageSwitch] = useSound("/media/page-switch.mp3");
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
@@ -92,7 +92,7 @@ export default function Container(props) {
             className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
             onClick={() =>{
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-              playpageSwitch()
+              // playpageSwitch()
             }
           }
           >

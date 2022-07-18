@@ -3,7 +3,7 @@ import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
 import styles from 'styles/mobile-menu.module.css';
-import useSound from "use-sound";
+// import useSound from "use-sound";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,8 +14,8 @@ export default function MobileMenu() {
       exitDelay: 300
     }
   );
-  const [playpageChange] = useSound("/media/page-change.mp3");
-  const [playMenuon] = useSound("/media/switch-on.mp3");
+  // const [playpageChange] = useSound("/media/page-change.mp3");
+  // const [playMenuon] = useSound("/media/switch-on.mp3");
   // const [playpageSwitch] = useSound("/media/page-switch.mp3");
   function toggleMenu() {
     if (isMenuOpen) {
@@ -41,7 +41,7 @@ export default function MobileMenu() {
         type="button"
         onClick={() => {
           toggleMenu()
-          playMenuon()
+          // playMenuon()
         }}
       >
         <MenuIcon data-hide={isMenuOpen} />
@@ -62,7 +62,7 @@ export default function MobileMenu() {
           >
             <Link href="/">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Home</a>
             </Link>
           </li>
@@ -72,7 +72,7 @@ export default function MobileMenu() {
           >
             <Link href="/guestbook">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Guestbook</a>
             </Link>
           </li>
@@ -82,7 +82,7 @@ export default function MobileMenu() {
           >
             <Link href="/dashboard">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Dashboard</a>
             </Link>
           </li>
@@ -100,7 +100,7 @@ export default function MobileMenu() {
           >
             <Link href="/snippets">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Snippets</a>
             </Link>
           </li>
@@ -110,7 +110,7 @@ export default function MobileMenu() {
           >
             <Link href="/newsletter">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Newsletter</a>
             </Link>
           </li>
@@ -120,7 +120,7 @@ export default function MobileMenu() {
           >
             <Link  href="/tweets">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Tweets</a>
             </Link>
           </li>
@@ -130,7 +130,7 @@ export default function MobileMenu() {
           >
             <Link href="/uses">
               <a onClick={() => {
-          playpageChange()
+          // playpageChange()
         }} className="flex w-auto pb-4">Uses</a>
             </Link>
           </li>
