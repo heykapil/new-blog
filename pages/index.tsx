@@ -22,7 +22,7 @@ export default function Home() {
                   A research scholar in fractional-order mathematical modelling working as{' '}
                   <span className="font-semibold">Junior research fellow (CSIR) India.</span>
                 </h2>
-                {/* <TypedBios /> */}
+                 <TypedBios /> 
                 <p className="text-gray-600 dark:text-gray-400 mb-16">
                 </p>
               </div>

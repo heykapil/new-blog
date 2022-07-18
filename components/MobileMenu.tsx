@@ -41,7 +41,7 @@ export default function MobileMenu() {
         type="button"
         onClick={() => {
           toggleMenu()
-          // playMenuon()
+           playMenuon()
         }}
       >
         <MenuIcon data-hide={isMenuOpen} />
