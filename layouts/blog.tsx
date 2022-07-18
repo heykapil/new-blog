@@ -4,7 +4,7 @@ import { parseISO, format } from 'date-fns';
 import Container from 'components/Container';
 // import Subscribe from 'components/Subscribe';
 import ViewCounter from 'components/ViewCounter';
-import type { PropsWithChildren } from 'react';
+import { PropsWithChildren, Suspense } from 'react';
 import type { Blog } from 'contentlayer/generated';
 
 const editUrl = (slug) =>
@@ -50,6 +50,7 @@ export default function BlogLayout({
             <ViewCounter slug={post.slug} />
           </p>
         </div>
+        <Suspense fallback={null}>
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
           {children}
         </div>
@@ -70,9 +71,10 @@ export default function BlogLayout({
             target="_blank"
             rel="noopener noreferrer"
           >
-            {'Edit on GitHub'}
+            {'Suggest Changes'}
           </a>
         </div>
+        </Suspense>
       </article>
     </Container>
   );
