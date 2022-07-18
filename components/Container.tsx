@@ -21,7 +21,7 @@ function NavItem({ href, text }) {
           isActive
             ? 'font-semibold text-gray-800 dark:text-gray-800 bg-gradient-to-br from-header-active-from via-header-active-via to-header-active-to'
             : 'font-semibold text-gray-800 dark:text-gray-400',
-          'hidden font-semibold md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg  text-gray-800 dark:text-gray-200 hover:dark:text-gray-800 hover:bg-gradient-to-tr hover:header-hover-from hover:header-hover-via hover:header-hover-to '          
+          'hidden font-semibold md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg  text-gray-800 dark:text-gray-200 hover:dark:text-gray-700 hover:bg-gradient-to-tr hover:from-header-hover-from hover:via-header-hover-via hover:to-header-hover-to '          
         )}
         onClick={() => {
           playpageChange()
@@ -37,6 +37,7 @@ export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
   const [playpageSwitch] = useSound("/media/page-switch.mp3");
+  const [playMenuon] = useSound("/media/switch-on.mp3");
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
@@ -52,7 +53,7 @@ export default function Container(props) {
   };
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-900">
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -73,6 +74,7 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
+    <div className="bg-gray-50 dark:bg-gray-900">
       <div className="top-0 sticky z-10 backdrop-blur supports-backdrop-blur:bg-gray-50/80 supports-backdrop-blur:dark:bg-gray-900/80 flex flex-col px-8 justify-between">
         <nav className="flex items-center justify-between w-full relative max-w-2xl mx-auto pt-5 pb-2 sm:pb-6">
           <a href="#skip" className="skip-nav">
@@ -92,7 +94,7 @@ export default function Container(props) {
             className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300"
             onClick={() =>{
               setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
-               playpageSwitch()
+               playMenuon()
             }
           }
           >
@@ -133,5 +135,6 @@ export default function Container(props) {
         <Footer />
       </main>
     </div>
+  </>
   );
 }

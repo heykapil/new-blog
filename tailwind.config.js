@@ -19,8 +19,8 @@ module.exports = {
         'header-active-from': '#dafefd',
         'header-active-via': '#fdfdb3',
         'header-active-to': '#fcdaab',
-        'header-hover-from': '#fca5a5',
-        'header-hover-via': 'rgb(253, 164, 175 / 50%)',
+        'header-hover-from': '#fecaca',
+        'header-hover-via': '#fed7aa',
         'header-hover-to': '#f0abfc',
         gray: {
           0: '#fff',
