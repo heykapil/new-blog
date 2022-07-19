@@ -8,7 +8,7 @@ import { PropsWithChildren, Suspense } from 'react';
 import type { Blog } from 'contentlayer/generated';
 
 const editUrl = (slug) =>
-  `https://github.com/hekapil/new-blog/edit/main/data/blog/${slug}.mdx`;
+  `https://github.com/heykapil/new-blog/edit/main/data/blog/${slug}.mdx`;
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `https://heykapil.in/blog/${slug}`
