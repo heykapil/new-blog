@@ -18,6 +18,13 @@ export type Views = {
   total: number;
 };
 
+export type GithubStats = {
+  repos: any;
+  gists: any;
+  total: number;
+};
+
+
 export type Song = {
   songUrl: string;
   artist: string;
@@ -50,3 +57,11 @@ export type GitHub = {
    downloads: number;
    views: number;
 };
+
+export type TwitterStats = {
+  user: any;
+  public_metrics: any;
+  followers_count: number;
+  following_count: number;
+  tweet_count: number;
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link';
-
+import GithubPersonal from 'components/metrics/GithubPersonal';
+import Twitter from 'components/metrics/Twitter';
 import Analytics from 'components/metrics/Analytics';
 import Container from 'components/Container';
 import GitHub from 'components/metrics/Github';
@@ -30,15 +31,18 @@ export default function Dashboard() {
             </Link>
           </p>
         </div>
-        {/* <div className="flex flex-col w-full">
-          <Unsplash />
-          <YouTube />
+        <div className="flex flex-col w-full">
+          <GithubPersonal />
         </div> 
-        */}
+       
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           <Analytics />
-          <GitHub />
+          <GitHub />   
         </div>
+        <div className="grid w-full grid-cols-1 gap-4 py-2  sm:grid-cols-2">
+            <Twitter type="followers" />
+            <Twitter type="following" />
+          </div>
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
           Top Tracks
         </h2>
