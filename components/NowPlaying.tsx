@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { useEffect } from 'react';
 import { animate } from 'motion';
-
+// import Image from 'next/image'
 import fetcher from 'lib/fetcher';
 import { NowPlayingSong } from 'lib/types';
 
@@ -91,6 +91,7 @@ export default function NowPlaying() {
       )}
       <div className="inline-flex flex-col sm:flex-row w-full max-w-full truncate">
         {data?.songUrl ? (
+          <>
           <a
             className="capsize text-gray-800 dark:text-gray-200 font-medium  max-w-max truncate"
             href={data.songUrl}
@@ -99,6 +100,7 @@ export default function NowPlaying() {
           >
             {data.title}
           </a>
+          </>
         ) : (
           <p className="capsize text-gray-800 dark:text-gray-200 font-medium">
             Not Playing
