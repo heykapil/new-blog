@@ -26,13 +26,13 @@ function GuestbookEntry({ entry, user }) {
       <div className="prose dark:prose-dark w-full">{entry.body}</div>
       <div className="flex items-center space-x-3">
         <p className="text-sm text-gray-500">{entry.created_by}</p>
-        <span className=" text-gray-200 dark:text-gray-800">|</span>
+        <span className=" text-gray-200 dark:text-gray-800">•</span>
         <p className="text-sm text-gray-400 dark:text-gray-600">
           {format(new Date(entry.updated_at), "d MMM yyyy 'at' h:mm bb")}
         </p>
         {user && entry.created_by === user.name && (
           <>
-            <span className="text-gray-200 dark:text-gray-800">|</span>
+            <span className="text-gray-200 dark:text-gray-800">•</span>
             <button
               className="text-sm text-red-600 dark:text-red-400"
               onClick={deleteEntry}
@@ -111,7 +111,7 @@ export default function Guestbook({ fallbackData }) {
           >
             {isLoadingGithub ? (
              <>
-              Loading <LoadingSpinner />
+              Waiting <LoadingSpinner />
              </>
               ) : (
               <>
@@ -131,7 +131,7 @@ export default function Guestbook({ fallbackData }) {
         >
           {isLoadingGoogle ? (
              <>
-              Loading <LoadingSpinner />
+              Waiting <LoadingSpinner />
              </>
               ) : (
               <>

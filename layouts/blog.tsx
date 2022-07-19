@@ -8,10 +8,10 @@ import { PropsWithChildren, Suspense } from 'react';
 import type { Blog } from 'contentlayer/generated';
 
 const editUrl = (slug) =>
-  `https://github.com/leerob/leerob.io/edit/main/data/blog/${slug}.mdx`;
+  `https://github.com/hekapil/new-blog/edit/main/data/blog/${slug}.mdx`;
 const discussUrl = (slug) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://leerob.io/blog/${slug}`
+    `https://heykapil.in/blog/${slug}`
   )}`;
 
 export default function BlogLayout({
@@ -33,14 +33,14 @@ export default function BlogLayout({
         <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
           <div className="flex items-center">
             <Image
-              alt="Lee Robinson"
+              alt="Kapil Chaudhary"
               height={24}
               width={24}
               src="/avatar.jpg"
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {'Lee Robinson / '}
+              {'Kapil Chaudhary • '}
               {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
