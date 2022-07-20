@@ -15,10 +15,17 @@ logo: 'latex.png'
 
 \begin{document}
 ...
-% trim 5cm from left edge
-\includegraphics[trim={5cm 0 0 0},clip]{path-to-image}
-% trim 5cm from right edge
-\includegraphics[trim={0 0 5cm 0},clip]{path-to-image}
+
+\begin{figure}[...]
+...
+     % trim 5cm from left edge
+      \includegraphics[trim={5cm 0 0 0},clip]{path-to-image}
+    % trim 5cm from right edge
+      \includegraphics[trim={0 0 5cm 0},clip]{path-to-image}
+      \caption{default}
+      \label{default}
+...
+\end{figure}
 ...
 \end{document}
 ```
