@@ -1,0 +1,26 @@
+---
+title: 'Crop inserted image in LaTeX'
+description: 'A short command to crop inserted image in latex'
+logo: 'latex.png'
+---
+
+```latex
+\includegrahics[trim={<left> <lower> <right> <upper>},clip]{path-to-image}
+```
+
+```latex:example.tex
+\documentclass{article}
+
+\usepackage{graphicx}
+
+\begin{document}
+...
+% trim 5cm from left edge
+\includegraphics[trim={5cm 0 0 0},clip]{path-to-image}
+% trim 5cm from right edge
+\includegraphics[trim={0 0 5cm 0},clip]{path-to-image}
+...
+\end{document}
+```
+
+
