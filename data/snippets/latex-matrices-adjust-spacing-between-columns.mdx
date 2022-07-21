@@ -1,0 +1,17 @@
+---
+title: 'Matrices adjust column spaces'
+description: 'Short code for adjusting column space in matrices.'
+logo: 'latex.png'
+---
+
+```latex
+\begin{align}
+\begingroup
+    % sets length between columns five points.
+	\setlength\arraycolsep{5pt} 
+     \begin{bmatrix}
+     ...
+     \end{bmatrix}
+\endgroup
+\end{align}
+```
