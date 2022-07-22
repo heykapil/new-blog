@@ -4,15 +4,15 @@ import { CssBaseline } from '@nextui-org/react';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-      const initialProps = await Document.getInitialProps(ctx);
-          return {
-                ...initialProps,
-                      styles: React.Children.toArray([initialProps.styles])
-                          };
-                            }
+    const initialProps = await Document.getInitialProps(ctx);
+    return {
+      ...initialProps,
+      styles: React.Children.toArray([initialProps.styles])
+    };
+  }
 
-render() {
-  return (
+  render() {
+    return (
     <Html lang="en">
       <Head>
         {CssBaseline.flush()}
