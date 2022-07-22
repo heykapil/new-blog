@@ -66,11 +66,11 @@ class MyDocument extends Document {
         />
 
         </Head>
-        <body>
+        <body className="bg-white dark:bg-black dark:text-white text-black">
           <Main />
           <NextScript />
-        </body className="bg-white dark:bg-black dark:text-white text-black">
-      </Html>
+        </body> 
+    </Html>
     );
   }
 }
