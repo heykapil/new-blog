@@ -43,6 +43,9 @@ export default function Dashboard() {
             <Twitter type="followers" />
             <Twitter type="following" />
           </div>
+        <div className="grid w-full grid-cols-1 gap-4 py-2 sm:grid-cols-2">
+            <Twitter type="total_tweets" />
+          </div>
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
           Top Tracks
         </h2>
