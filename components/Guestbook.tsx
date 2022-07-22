@@ -8,6 +8,7 @@ import { Form, FormState } from 'lib/types';
 import SuccessMessage from 'components/SuccessMessage';
 import ErrorMessage from 'components/ErrorMessage';
 import LoadingSpinner from 'components/LoadingSpinner';
+import { Loading } from '@nextui-org/react';
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig();
@@ -111,7 +112,7 @@ export default function Guestbook({ fallbackData }) {
           >
             {isLoadingGithub ? (
              <>
-              Waiting <LoadingSpinner />
+              Waiting <Loading size="sm" />
              </>
               ) : (
               <>

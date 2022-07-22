@@ -1,9 +1,21 @@
+import React from 'react';
 import { Html, Head, Main, NextScript } from 'next/document';
+import { CssBaseline } from '@nextui-org/react';
 
-export default function Document(props) {
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+      const initialProps = await Document.getInitialProps(ctx);
+          return {
+                ...initialProps,
+                      styles: React.Children.toArray([initialProps.styles])
+                          };
+                            }
+
+render() {
   return (
     <Html lang="en">
       <Head>
+        {CssBaseline.flush()}
         <link
           rel="preload"
           href="/fonts/ibm-plex-sans-var.woff2"
@@ -57,4 +69,6 @@ export default function Document(props) {
       </body>
     </Html>
   );
-}
+};
+
+export default MyDocument;
