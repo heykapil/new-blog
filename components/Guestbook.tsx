@@ -128,7 +128,8 @@ export default function Guestbook({ fallbackData }) {
           <Button auto shadow onClick={(e) => {
               e.preventDefault();
               signIn('github');
-              setIsLoadingGithub(true);>
+              setIsLoadingGithub(true);
+           }}>
          <a href="/api/auth/signin/gitHub"> GitHub </a> 
         </Button>
        </Modal.Body>
