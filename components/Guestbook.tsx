@@ -9,7 +9,7 @@ import { Form, FormState } from 'lib/types';
 import SuccessMessage from 'components/SuccessMessage';
 import ErrorMessage from 'components/ErrorMessage';
 import LoadingSpinner from 'components/LoadingSpinner';
-import { Button, Text, Loading } from '@nextui-org/react';
+import { Button, Grid, Text, Loading } from '@nextui-org/react';
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig();
@@ -101,10 +101,11 @@ export default function Guestbook({ fallbackData }) {
         </p>
         {!session && (
           <>
-
+         <Grid.Container gap={2}>
+          <Grid>
           <Link
           href="/api/auth/signin/github" passHref>
-          <Button bordered color="gradient" auto
+          <Button shadow color="gradient" auto
               onClick={() => {
               signIn('github');
               setIsLoadingGithub(true);
@@ -122,11 +123,12 @@ export default function Guestbook({ fallbackData }) {
           )}
           </Button>
           </Link>
+         </Grid>
+         <Grid>
           <Link
           href="/api/auth/signin/google" passHref>
-          <Button bordered color="gradient"
-            onClick={(e) => {
-            e.preventDefault();
+          <Button shadow color="primary" auto 
+            onClick={() => {
             signIn('google');
             setIsLoadingGoogle(true);
           }}
@@ -142,6 +144,8 @@ export default function Guestbook({ fallbackData }) {
             </> )}
         </Button>
         </Link>
+        </Grid> 
+        </Grid.Container>
         </>
         )}
         {session?.user && (
