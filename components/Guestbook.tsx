@@ -101,10 +101,10 @@ export default function Guestbook({ fallbackData }) {
         </p>
         {!session && (
           <>
-          <div className='flex flex-col gap-3 space-x-2 sm:flex-row sm:gap-5'>
+
           <Link
           href="/api/auth/signin/github" passHref>
-          <Button auto shadow color="gradient"
+          <Button bordered color="gradient"
               onClick={(e) => {
               e.preventDefault();
               signIn('github');
@@ -125,7 +125,7 @@ export default function Guestbook({ fallbackData }) {
           </Link>
           <Link
           href="/api/auth/signin/google" passHref>
-          <Button auto shadow color="gradient"
+          <Button bordered color="gradient"
             onClick={(e) => {
             e.preventDefault();
             signIn('google');
@@ -143,7 +143,6 @@ export default function Guestbook({ fallbackData }) {
             </> )}
         </Button>
         </Link>
-        </div>
         </>
         )}
         {session?.user && (
