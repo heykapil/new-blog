@@ -8,7 +8,7 @@ import { Form, FormState } from 'lib/types';
 import SuccessMessage from 'components/SuccessMessage';
 import ErrorMessage from 'components/ErrorMessage';
 import LoadingSpinner from 'components/LoadingSpinner';
-import { Loading } from '@nextui-org/react';
+import { Modal, Row, Text, Button, Loading } from '@nextui-org/react';
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig();
@@ -51,6 +51,12 @@ export default function Guestbook({ fallbackData }) {
   const { data: session } = useSession();
   const [isLoadingGoogle, setIsLoadingGoogle] = useState<boolean>();
   const [isLoadingGithub, setIsLoadingGithub] = useState<boolean>();
+  const [visible, setVisible] = React.useState(false);
+  const handler = () => setVisible(true);
+  const closeHandler = () => {
+    setVisible(false);
+    console.log("closed");
+  };
   const { mutate } = useSWRConfig();
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
   const inputEl = useRef(null);
@@ -100,6 +106,37 @@ export default function Guestbook({ fallbackData }) {
         </p>
         {!session && (
           <>
+          <div> 
+           <Button auto color="warning" shadow onClick={handler}>
+        Login
+      </Button>
+      <Modal
+        closeButton
+        blur
+        aria-labelledby="modal-title"
+        open={visible}
+        onClose={closeHandler}
+      >
+      <Modal.Header>
+          <Text id="modal-title" size={18}>
+            <Text b size={18}>
+              Login
+            </Text>
+          </Text>
+        </Modal.Header>
+        <Modal.Body>
+          <Button auto shadow onClick={(e) => {
+              e.preventDefault();
+              signIn('github');
+              setIsLoadingGithub(true);>
+         <a href="/api/auth/signin/gitHub"> GitHub </a> 
+        </Button>
+       </Modal.Body>
+        <Modal.Footer>
+        <Text size={12}>Footer</Text>
+       </Modal.Footer>
+       </Modal>
+      </div>
           <div className='flex flex-col sm:flex-row sm:gap-5'>
           <a
             href="/api/auth/signin/github"
