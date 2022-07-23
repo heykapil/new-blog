@@ -9,7 +9,7 @@ import { Form, FormState } from 'lib/types';
 import SuccessMessage from 'components/SuccessMessage';
 import ErrorMessage from 'components/ErrorMessage';
 import LoadingSpinner from 'components/LoadingSpinner';
-import { Modal, Row, Text, Button, Loading } from '@nextui-org/react';
+import { Button, Loading } from '@nextui-org/react';
 
 function GuestbookEntry({ entry, user }) {
   const { mutate } = useSWRConfig();
@@ -107,38 +107,6 @@ export default function Guestbook({ fallbackData }) {
         </p>
         {!session && (
           <>
-          <div> 
-           <Button auto color="warning" shadow onClick={handler}>
-        Login
-      </Button>
-      <Modal
-        closeButton
-        blur
-        aria-labelledby="modal-title"
-        open={visible}
-        onClose={closeHandler}
-      >
-      <Modal.Header>
-          <Text id="modal-title" size={18}>
-            <Text b size={18}>
-              Login
-            </Text>
-          </Text>
-        </Modal.Header>
-        <Modal.Body>
-          <Button auto shadow onClick={(e) => {
-              e.preventDefault();
-              signIn('github');
-              setIsLoadingGithub(true);
-           }}>
-         <a href="/api/auth/signin/gitHub"> GitHub </a> 
-        </Button>
-       </Modal.Body>
-        <Modal.Footer>
-        <Text size={12}>Footer</Text>
-       </Modal.Footer>
-       </Modal>
-      </div>
           <div className='flex flex-col sm:flex-row sm:gap-5'>
           <a
             href="/api/auth/signin/github"
@@ -151,7 +119,7 @@ export default function Guestbook({ fallbackData }) {
           >
             {isLoadingGithub ? (
              <>
-              Waiting <Loading size="sm" />
+              Waiting <Loading color="secondary" size="sm" />
              </>
               ) : (
               <>
@@ -171,7 +139,7 @@ export default function Guestbook({ fallbackData }) {
         >
           {isLoadingGoogle ? (
              <>
-              Waiting <LoadingSpinner />
+              Waiting <Loading color="secondary" size="sm" />
              </>
               ) : (
               <>
@@ -191,12 +159,12 @@ export default function Guestbook({ fallbackData }) {
               required
               className="pl-4 pr-32 py-2 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full border-gray-300 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
             />
-            <button
+            <Button bordered color="gradient"
               className="flex items-center justify-center absolute right-1 top-1 px-4 pt-1 font-medium h-8 bg-gray-200 dark:bg-gray-600 text-gray-900 dark:text-gray-100 rounded w-28"
               type="submit"
             >
-              {form.state === Form.Loading ? <LoadingSpinner /> : 'Sign'}
-            </button>
+              {form.state === Form.Loading ? <Loading color="success" size="sm" /> : 'Sign'}
+            </Button>
           </form>
         )}
         {form.state === Form.Error ? (
