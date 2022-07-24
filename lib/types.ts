@@ -66,6 +66,8 @@ export type TwitterStats = {
   tweet_count: number;
 };
 
+export type ThemeType = 'light' | 'dark';
+
 export type NextUIThemeContext = {
   type: ThemeType | string;
   theme?: NextUITheme;
