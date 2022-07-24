@@ -64,4 +64,10 @@ export type TwitterStats = {
   followers_count: number;
   following_count: number;
   tweet_count: number;
-}
+};
+
+export type NextUIThemeContext = {
+  type: ThemeType | string;
+  theme?: NextUITheme;
+  isDark?: boolean;
+};
