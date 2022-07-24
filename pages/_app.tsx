@@ -2,7 +2,7 @@ import 'styles/global.css';
 import 'katex/dist/katex.min.css'
 import type { AppProps } from 'next/app';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import DarkTheme from './themes/DarkTheme';
+import DarkTheme from 'themes/DarkTheme';
 import { SessionProvider } from 'next-auth/react';
 import { createTheme, NextUIProvider, theme as NextUITheme } from "@nextui-org/react"
 
